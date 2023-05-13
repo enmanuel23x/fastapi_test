@@ -8,7 +8,7 @@ Make sure you have the following components installed:
 - Docker
 - Docker Compose
 
-## Usage Instructions - Docker
+## Usage Instructions
 
 1. Clone this repository to your local machine.
 2. Navigate to the root directory of the project.
