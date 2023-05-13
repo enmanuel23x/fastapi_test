@@ -1,6 +1,3 @@
--- use public schema
-SET search_path TO public;
-
 -- Create task table
 CREATE TABLE tasks (
   id SERIAL PRIMARY KEY,

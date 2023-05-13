@@ -1,20 +1,18 @@
-# Configuración de la imagen base
+# Use an base image for FastAPI application
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.8
 
-# Copia los archivos de la aplicación a la imagen de Docker
+# Copy the application code to the container
 COPY ./app /app
 
-# Instala las dependencias de la aplicación
-RUN pip install --no-cache-dir psycopg2-binary
-RUN pip install sqlalchemy
-RUN pip install python-dotenv
+# Install the Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Configura las variables de entorno para la conexión a PostgreSQL
+# Set up the environment variables for the PostgreSQL connection
 ENV DB_USER=root
 ENV DB_PASSWORD=root
 ENV DB_NAME=testdb
 ENV DB_HOST=db
 ENV DB_PORT=5432
 
-# Configuración de entrada para iniciar la aplicación
+# Set the entrypoint command to wait for the database and start the FastAPI application
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]
