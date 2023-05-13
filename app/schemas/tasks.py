@@ -9,3 +9,11 @@ class TaskBase(BaseModel):
 
     class Config:
         orm_mode = True
+
+class TaskModel(BaseModel):
+    title: str
+    description: str
+    due_datetime: date
+
+    class Config:
+        orm_mode = True
