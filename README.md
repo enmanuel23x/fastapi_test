@@ -13,6 +13,7 @@ Make sure you have the following components installed:
 1. Clone this repository to your local machine.
 2. Navigate to the root directory of the project.
 3. Start the services using Docker Compose or Make.
+5000 *By default, FastAPI Service runs on port 5000.*
 
 ### Make commands list
 - Display available commands and their descriptions
@@ -30,3 +31,6 @@ Make sure you have the following components installed:
     ```sh cd app && uvicorn main:app --reload --port 5000```
 - Start the database service 
     ```sh docker-compose up --build```
+
+## API Routes
+To get more details about the API, please refer to the [full documentation](docs/api.md).
